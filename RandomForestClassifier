@@ -1,0 +1,11 @@
+##随机森林
+from sklearn import cross_validation
+from sklearn.ensemble import RandomForestClassifier
+
+predictors = [""]#这个位置是放入特征值
+
+alg = RandomForestClassifier(random_state=1,n_estimators=10,min_samples_split=2,min_samples_leaf=1) #  10棵树，
+kf  = corss_validation.KFold(titanic.shape[0],n_folds=3,random_state=1) 
+scores = corss_validation.corss_val_score(alg, titanic[predictors],titanic[""],cv=kf)   #这个位置是看精度
+
+print(scores.mean())
